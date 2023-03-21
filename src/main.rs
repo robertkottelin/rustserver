@@ -10,7 +10,7 @@ struct Text {
     content: String,
 }
 
-// ERROR HERE, NOT RIGHT TYPE OF DATA FROM FRONTEND TO DB
+// ERROR HERE, NOT RIGHT TYPE OF DATA FROM FRONTEND TO DB -- FIX
 #[post("/submit_data")]
 async fn submit_data(conn: web::Data<Arc<Mutex<Connection>>>, text: web::Json<Text>) -> impl Responder {
     let conn = conn.lock().unwrap();
